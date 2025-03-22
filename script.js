@@ -2,20 +2,29 @@ let name="";
 let shown = false;
 
 function create_name(){
-  let first = document.getElementById("firstname").value
-  let last = document.getElementById("lastname").value
-  name = first + " " + last
-  document.getElementById("name").innerHTML = name
+  let first = document.getElementById("username").value
+  user = first + " checked out a book."
+  document.getElementById("user").innerHTML = user
   shown = true;
+  hideshow('staff')
 }
 function toggle_name(){
   if(shown===false){
-    document.getElementById("name").innerHTML = name
+    document.getElementById("user").innerHTML = user
     shown = true;
   } else {
-    document.getElementById("name").innerHTML = ""
+    document.getElementById("user").innerHTML = ""
     shown = false;
   }
+}
+
+function hideshow(id){
+  var el = document.getElementById(id);
+  if (el)
+  {
+      el.style.display = (el.style.display === 'none') ? 'block' : 'none';
+  }
+  return false;
 }
 
 // let num=0
